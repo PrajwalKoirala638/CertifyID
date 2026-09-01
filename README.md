@@ -11,18 +11,25 @@
 - [What is CertifyID?](#what-is-certifyid)
 - [Why this matters](#why-this-matters)
 - [How it works](#how-it-works)
+- [Official sources, not stored data](#official-sources-not-stored-data)
 - [What gets checked](#what-gets-checked)
 - [Who this is for](#who-this-is-for)
 - [Use cases](#use-cases)
 - [Discounts & other benefits](#discounts--other-benefits)
+- [Global KYC & compliance support](#global-kyc--compliance-support)
+- [Benefits for businesses](#benefits-for-businesses)
 - [Verification levels](#verification-levels)
 - [Accepted ID types](#accepted-id-types)
 - [Data & privacy](#data--privacy)
 - [Compliance & legal](#compliance--legal)
+- [Security](#security)
+- [Service levels](#service-levels)
+- [Roadmap](#roadmap)
 - [What CertifyID is not](#what-certifyid-is-not)
 - [Why businesses trust CertifyID](#why-businesses-trust-certifyid)
 - [FAQ](#faq)
-- [Getting started](#getting-started)
+- [Support & contact](#support--contact)
+- [License](#license)
 
 ---
 
@@ -50,15 +57,29 @@ Every day, businesses have to trust that people are telling the truth about who 
 
 A verification typically completes in a few seconds to a couple of minutes, depending on the verification level requested.
 
+## Official sources, not stored data
+
+This is the core design principle behind CertifyID, so it's worth stating plainly:
+
+**CertifyID does not build, hold, or sell a database of people.** There is no internal directory to browse or query. Every verification is a real-time check against official, authoritative sources at the moment it's needed — for example, the government body that issued a passport or driver's license, or an authorized registry that can confirm a document is currently valid.
+
+Once the check is complete, CertifyID returns a result — verified or not verified — and retains only what's necessary for a legal audit trail, for the minimum period required. It does not accumulate a growing dataset that gets more valuable, more detailed, or more reusable over time. Each verification stands on its own.
+
+This matters for three reasons:
+
+- **It's what makes the compliance story real.** A KYC check that relies on a static, scraped, or purchased dataset can go stale, be wrong, or not reflect a document that's since been revoked or reported lost. A live check against an official source reflects the current, authoritative status.
+- **It's what limits your liability as a business.** A held dataset is a target — for breaches, for subpoenas, for regulatory scrutiny. A verification log of pass/fail outcomes is a much smaller, safer footprint.
+- **It's what makes this legal to operate in most jurisdictions.** Businesses that resell or redistribute personal data usually need to register as a data broker and meet a much higher bar than businesses that perform on-demand verification and discard what they don't need.
+
 ## What gets checked
 
-| Check | What it means |
-|---|---|
-| **Document authenticity** | Confirms the ID itself is genuine and not fabricated or altered |
-| **Document validity** | Confirms the ID is currently valid and not expired |
-| **Face match** | Confirms the person presenting the ID matches the photo on it |
-| **Data consistency** | Confirms name, date of birth, and ID number are internally consistent |
-| **Liveness check** | Confirms a real, live person is present (not a photo of a photo, a mask, or a screen) |
+| Check                         | What it means                                                                                     |
+| ----------------------------- | ------------------------------------------------------------------------------------------------- |
+| **Document authenticity**     | Confirms the ID itself is genuine and not fabricated or altered                                   |
+| **Document validity**         | Confirms the ID is currently valid and not expired                                                |
+| **Face match**                | Confirms the person presenting the ID matches the photo on it                                     |
+| **Data consistency**          | Confirms name, date of birth, and ID number are internally consistent                             |
+| **Liveness check**            | Confirms a real, live person is present (not a photo of a photo, a mask, or a screen)             |
 | **Duplicate/reuse detection** | Flags if the same document or face has already been used elsewhere in a way that looks suspicious |
 
 ## Who this is for
@@ -105,6 +126,35 @@ This model is already standard practice at large retailers, and it's the same ap
 
 The goal is a system that works for everyone in the exchange: businesses can offer discounts and benefits with confidence they're going to the right people, and customers get a fast, private, consistent process instead of an inconsistent one that varies by which employee is working the register.
 
+## Global KYC & compliance support
+
+Many businesses — especially in financial services, fintech, real estate, and online marketplaces — are legally required to confirm who their customers are before doing business with them. This is usually called **Know Your Customer (KYC)**, and it's often paired with **Anti-Money Laundering (AML)** obligations.
+
+CertifyID is built to support that need, but it's worth being direct about how: **by verifying a specific person's document and identity at the moment they need it checked — not by holding or supplying a pre-built database of people.** Real compliance doesn't come from a static list; it comes from a repeatable, auditable check performed on demand.
+
+What that support looks like in practice:
+
+- **Document verification** — confirming a government-issued ID is genuine and unaltered.
+- **Identity matching** — confirming the person presenting the ID is the person it belongs to.
+- **Audit trail** — a timestamped record that a specific check was performed and what the result was, which businesses can point to if a regulator asks.
+- **Consistent process** — the same verification standard applied to every customer, everywhere, which is itself often a compliance requirement.
+- **Jurisdiction-aware checks** — accounting for the fact that acceptable ID types, retention rules, and consent requirements differ by country and, in the U.S., by state.
+
+**Important:** requirements differ significantly by country, industry, and regulator (for example, banking KYC rules are not the same as marketplace identity checks, and EU, US, and other jurisdictions each have their own frameworks like AMLD in the EU or the Bank Secrecy Act in the US). CertifyID can support the verification step, but a business is still responsible for building a compliance program with its own legal counsel — this README is not a substitute for that.
+
+## Benefits for businesses
+
+| Benefit                  | What it means for the business                                                                                    |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------- |
+| **Fraud reduction**      | Fewer fake accounts, fake IDs, and fraudulent discount or benefit claims                                          |
+| **Regulatory support**   | An auditable verification step that helps satisfy KYC/AML-style obligations                                       |
+| **Faster onboarding**    | Customers, employees, or users get verified in seconds instead of manual review                                   |
+| **Lower liability**      | The business isn't storing sensitive personal documents itself — CertifyID handles the check and returns a result |
+| **Consistency**          | Every person goes through the same process, reducing human error and bias                                         |
+| **Scalability**          | Works the same whether a business verifies ten people a day or ten thousand                                       |
+| **Trust with customers** | Customers feel confident that the business takes fraud and fairness seriously                                     |
+| **Global reach**         | The same verification approach can extend to new markets as document types and country coverage are added         |
+
 ## Verification levels
 
 Not every situation needs the same depth of check. CertifyID offers tiered verification so businesses can match the level of scrutiny to the level of risk:
@@ -143,6 +193,35 @@ Identity verification touches regulated areas, and any real-world implementation
 
 This section is a general orientation, not legal advice — a real deployment should be reviewed by legal counsel familiar with the relevant jurisdictions.
 
+## Security
+
+Security is foundational to a service that handles identity documents, not an add-on. A production deployment of CertifyID should be built around:
+
+- **Encryption in transit and at rest** — all document images, biometric data, and results are encrypted end to end.
+- **Minimal retention** — data is discarded as soon as it's no longer needed for the audit trail, per the retention policy in force.
+- **Access controls** — only authorized systems and personnel can access verification data, with logging on every access.
+- **Independent audits** — periodic third-party security review (e.g., SOC 2, ISO 27001-style audits) rather than only internal review.
+- **Incident response plan** — a documented process for detecting, containing, and disclosing any security incident in line with breach-notification law.
+- **Vendor accountability** — if verification is performed via a third-party or official-source partner, that partner's own security posture is part of CertifyID's risk assessment.
+
+These are the standards a production identity service is expected to meet — treat this as a checklist to implement and certify against, not a claim that it's already certified.
+
+## Service levels
+
+- **Availability** — verification should be available with clearly published uptime targets (e.g., 99.9%), with status communicated during outages.
+- **Response time** — Basic and Standard checks should return in seconds; Enhanced checks with manual review may take longer, with expectations set up front.
+- **Support tiers** — response-time commitments should scale with the business's plan (e.g., faster support for higher-volume or regulated customers).
+
+## Roadmap
+
+Planned areas of expansion as CertifyID matures:
+
+- Broader country and document-type coverage
+- Expanded verification categories (additional discount/benefit types, additional KYC use cases)
+- Self-serve dashboard for businesses to configure verification levels and review results
+- Developer API and documentation for direct integration
+- Additional independent security and compliance certifications
+
 ## What CertifyID is not
 
 - CertifyID is **not** a government agency and is **not** affiliated with any government, state, or federal ID system.
@@ -172,15 +251,14 @@ Coverage depends on which document types and countries are supported at a given 
 **Is this the same as a background check?**
 No. Identity verification confirms someone is who they claim to be. A background check looks into someone's history (criminal record, credit, employment, etc.) and is a separate, more heavily regulated process.
 
-## Getting started
+## Support & contact
 
-This document describes the concept and intended behavior of CertifyID. Turning it into a real, operating service involves:
+For business inquiries, integration support, or to report a security concern, add your organization's contact details here (support email, security disclosure email, and business hours or SLA for response).
 
-1. Choosing a licensed identity-verification technology partner or building/certifying your own document- and biometric-verification pipeline.
-2. Confirming legal and regulatory requirements in every jurisdiction you'll operate in.
-3. Defining clear data retention, consent, and privacy policies.
-4. Building an integration (web, in-store device, or API) for businesses to use.
+## License
+
+Add your chosen license or note that this is proprietary/all rights reserved, along with terms of service and privacy policy links once published.
 
 ---
 
-*CertifyID: Verify once. Trust with confidence.*
+_CertifyID: Verify once. Trust with confidence._
